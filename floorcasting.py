@@ -43,10 +43,10 @@ def movement(posx, posy, rot, keys, et):
         rot = rot + 0.001*et
         
     if keys[pg.K_UP] or keys[ord('w')]:
-        posx, posy = posx + np.cos(rot)*0.005*et,  posy + np.sin(rot)*0.005*et
+        posx, posy = posx + np.cos(rot)*0.002*et,  posy + np.sin(rot)*0.002*et
 
     if keys[pg.K_DOWN] or keys[ord('s')]:
-        posx, posy = posx - np.cos(rot)*0.005*et,  posy - np.sin(rot)*0.005*et
+        posx, posy = posx - np.cos(rot)*0.002*et,  posy - np.sin(rot)*0.002*et
 
     return posx, posy, rot
 
@@ -59,8 +59,7 @@ def new_frame(posx, posy, rot, frame, sky, floor, hres, halfvres, mod):
         for j in range(halfvres):
             n = (halfvres/(halfvres-j))/cos2
             x, y = posx + cos*n, posy + sin*n
-            scaler = 30/5
-            xx, yy = int(x/scaler%1*99), int(y/scaler%1*99)
+            xx, yy = int(x*2%1*99), int(y*2%1*99)
 
             shade = 0.2 + 0.8*(1-j/halfvres)
 
