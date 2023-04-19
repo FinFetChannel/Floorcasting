@@ -45,7 +45,7 @@ async def main():
 
         fps = int(clock.get_fps())
         pg.display.set_caption("Pycasting maze - FPS: " + str(fps))
-        asyncio.sleep(0)
+        await asyncio.sleep(0)
 
     pg.quit()
 
